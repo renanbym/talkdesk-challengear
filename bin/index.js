@@ -1,8 +1,26 @@
 #! /usr/bin/env node
+const cm = require('commander');
 const fs = require('fs');
+const checkNumbers = require('../controller/checkPhoneNumbers');
 
-const querystring = require('querystring')
-const arguments = process.argv.splice(2, process.argv.length -1).join(' ')
-const search    = querystring.stringify({ address: arguments })
+cm
+    .version('1.0.0')
+    .description('Get valid numbers');
 
-console.log( search );
+cm
+    .command('file <file>')
+    .description('Talkdesk\'s recruitment process')
+    .action(file => readFile(file));
+
+cm.parse(process.argv);
+
+async function readFile(file) {
+
+    fs.readFile(file, 'utf8', (err, data) => {
+        if( err ) throw  'error loading file';
+        const lines = data.split(/\r?\n/);
+        console.log( checkNumbers(lines) );
+    });
+
+    return true;
+}

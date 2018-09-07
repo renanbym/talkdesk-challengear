@@ -10,9 +10,12 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "forecast": "./bin/index.js"
+    "tallkdesk-phone": "./bin/index.js"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "commander": "^2.18.0"
   }
 }
