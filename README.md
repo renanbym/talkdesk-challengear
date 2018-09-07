@@ -15,6 +15,10 @@ $ npm install
 $ npm run start
 ```
 
+To do local tests with the possibilities, just update the file phone.txt
+To do the test online, just paste the file phone.txt
+> Remembering that in the file (phone.txt), the phones must be separated by enter (\n)
+
 SITE >> http://localhost:3001/
 
 
