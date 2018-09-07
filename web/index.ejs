@@ -42,9 +42,9 @@
         xhr.addEventListener('readystatechange', function () {
             if (xhr.readyState === 4 && xhr.status == 200) {
                 var json = JSON.parse(xhr.responseText);
-
+    
                 $preview.innerHTML = '';
-                if (json) {
+                if (json && json.length) {
 
                     for( data in json ){
                         var key = Object.keys(json[data])[0];

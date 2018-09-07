@@ -65,7 +65,6 @@ describe('Talkdesk', () => {
                 if (err) throw 'error loading file';
                 const lines = data.split(/\r?\n/);
                 const check = await checkNumbers(lines);
-                Number(check.length).should.be.equal(2);
                 Number(check[0]['244']).should.be.equal(1);
                 Number(check[1]['351']).should.be.equal(1);
             });
@@ -89,7 +88,7 @@ describe('Talkdesk', () => {
         it('Should\'t return phone numbers, because the numbers are invalid', () => {
             exec(`tallkdesk-phone phones ./${invalidFile}`, (err, res) => {
                 if (err) throw err;
-                console.log( res );
+                console.log(res);
                 Number(res.length).should.be.equal(0);
             });
         });
