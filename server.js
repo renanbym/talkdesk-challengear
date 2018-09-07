@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 app.post( '/file', multiparty(), (req, res) => {
     fs.readFile(req.files.file.path, 'utf8', async (err, data) => {
-        if( err ) throw  'error loading file';
+        if( err ) throw 'error loading file';
         const lines = data.split(/\r?\n/);
         const content = checkNumbers(lines);
         res.setHeader('Content-Type', 'application/json');
@@ -32,9 +32,9 @@ app.post( '/file', multiparty(), (req, res) => {
     });
 })
 
-server.listen('3001')
+server.listen( process.env.PORT || '3001')
     .on('listening', () => {
-        console.log('run, forest!', process.env.NODE_ENV, '3001')
+        console.log('run, forest!', process.env.NODE_ENV, process.env.PORT || '3001')
     })
 
 module.exports = app

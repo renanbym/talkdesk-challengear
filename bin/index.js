@@ -17,7 +17,7 @@ cm.parse(process.argv);
 async function readFile(file) {
 
     fs.readFile(file, 'utf8', (err, data) => {
-        if( err ) throw  'error loading file';
+        if( err ) return console.log('error loading file');
         const lines = data.split(/\r?\n/);
         console.log( checkNumbers(lines) );
     });
