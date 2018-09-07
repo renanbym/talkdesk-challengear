@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 const cm = require('commander');
 const fs = require('fs');
-const checkNumbers = require('../controller/checkPhoneNumbers');
+const checkNumbers = require('../controllers/checkPhoneNumbers');
 
 cm
     .version('1.0.0')

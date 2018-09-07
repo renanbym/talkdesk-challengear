@@ -1,5 +1,5 @@
 const exec = require('child_process').exec;
-const checkNumbers = require('../controller/checkPhoneNumbers');
+const checkNumbers = require('../controllers/checkPhoneNumbers');
 const fs = require('fs');
 
 require('should');
