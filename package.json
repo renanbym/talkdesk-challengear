@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --reporter spec"
+    "test": "./node_modules/mocha/bin/mocha --reporter spec",
+    "start": "./node_modules/mocha/bin/mocha --reporter spec && nodemon server.js"
   },
   "keywords": [],
   "author": "",
