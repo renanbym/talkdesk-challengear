@@ -8,7 +8,7 @@ cm
     .description('Get valid numbers');
 
 cm
-    .command('file <file>')
+    .command('phones <file>')
     .description('Talkdesk\'s recruitment process')
     .action(file => readFile(file));
 
